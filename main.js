@@ -89,7 +89,7 @@ const fibonacci = function(num) {
     } else if (num === 1) {
         return 1;
     } else {
-        return fibonacci(add(add(num, -1)), fibonacci(add(num, -2)));
+        return add(fibonacci(add(num, -1)), fibonacci(add(num, -2)));
     }
 }
 
