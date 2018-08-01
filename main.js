@@ -5,7 +5,7 @@
  */
 
 
-let add = function(a, b) {
+let add = function (a, b) {
     return a + b;
 }
 
@@ -49,7 +49,7 @@ function multiply(a, b) {
 /*
  * power(a, b) => return a^b
  * I used division to account for the possibility of a negative b
- */ 
+ */
 const power = (a, b) => {
     let result_of_power = 1;
     let iterationTarget;
@@ -80,7 +80,7 @@ function factorial(n) {
     }
 }
 
-const fibonacci = function(num) {
+const fibonacci = function (num) {
     if (num < 0) {
         return "Error: fibonacci can only be performed on nonnegative numbers.";
     }
@@ -130,19 +130,19 @@ console.log("fibonacci(7) = " + fibonacci(7));
 //     })
 // }
 
-document.querySelectorAll("input").forEach(function(a) {
-    a.addEventListener("change", function() {
+document.querySelectorAll("input").forEach(function (a) {
+    a.addEventListener("change", function () {
         let secondNumberInput = document.getElementById("second_number");
-      if (this.value == "factorial" || this.value == "fibonacci") {
-        secondNumberInput.disabled = true;
-      } else {
-          secondNumberInput.disabled = false;
-      }
+        if (this.value == "factorial" || this.value == "fibonacci") {
+            secondNumberInput.disabled = true;
+        } else {
+            secondNumberInput.disabled = false;
+        }
     })
-  });
+});
 
 let submitButton = document.querySelector("button");
-submitButton.onclick = function() {
+submitButton.onclick = function () {
     let radio_value = document.querySelector('input[name="function_selector"]:checked').value;
     console.log(radio_value);
     let a = Number(document.getElementById("first_number").value);
