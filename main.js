@@ -89,7 +89,7 @@ const fibonacci = function(num) {
     } else if (num === 1) {
         return 1;
     } else {
-        return fibonacci(add(num, -1)) + fibonacci(add(num, -2));
+        return fibonacci(add(add(num, -1)), fibonacci(add(num, -2)));
     }
 }
 
@@ -121,6 +121,14 @@ console.log("\n");
 
 console.log("fibonacci(7) = " + fibonacci(7));
 
+for (let radio in document.querySelectorAll('input[name="function_selector"]')) {
+    console.log(radio);
+    radio.addEventListener("change", function() {
+        console.log(this.checked);
+        console.log("checked radio value="+thisvalue);
+        if (!this.checked) console.log("do something");
+    })
+}
 
 let submitButton = document.querySelector("button");
 submitButton.onclick = function() {
