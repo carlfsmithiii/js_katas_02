@@ -121,15 +121,6 @@ console.log("\n");
 
 console.log("fibonacci(7) = " + fibonacci(7));
 
-// for (let radio in document.querySelectorAll('input[name="function_selector"]')) {
-//     console.log(radio);
-//     radio.addEventListener("change", function() {
-//         console.log(this.checked);
-//         console.log("checked radio value="+thisvalue);
-//         if (!this.checked) console.log("do something");
-//     })
-// }
-
 document.querySelectorAll("input").forEach(function (a) {
     a.addEventListener("change", function () {
         let secondNumberInput = document.getElementById("second_number");
