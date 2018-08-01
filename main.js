@@ -120,3 +120,26 @@ console.log("factorial of 5 = " + factorial(5));
 console.log("\n");
 
 console.log("fibonacci(7) = " + fibonacci(7));
+
+
+let submitButton = document.querySelector("button");
+submitButton.onclick = function() {
+    console.log("Submit Button Selected");
+    let radio_value = document.querySelector('input[name="function_selector"]:checked').value;
+    console.log(radio_value);
+    let a = Number(document.getElementById("first_number").value);
+    let b = Number(document.getElementById("second_number").value);
+    let p = document.getElementById("solution");
+
+    if (radio_value === "add") {
+        p.textContent = add(a, b);
+    } else if (radio_value === "multiply") {
+        p.textContent = multiply(a, b);
+    } else if (radio_value === "power") {
+        p.textContent = power(a, b);
+    } else if (radio_value === "factorial") {
+        p.textContent = factorial(a);
+    } else if (radio_value === "fibonacci") {
+        p.textContent = fibonacci(a);
+    }
+}

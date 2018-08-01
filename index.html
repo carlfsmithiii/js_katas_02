@@ -5,9 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Javascript Katas 2</title>
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Please see the console for output</h1> 
+    <div class="body_div">
+        <h1>Please see the console for output</h1> 
+        <h2>Or play below -- CSS styling still in progress</h2>
+        <form>
+            <fieldset id="function_radio_field">
+                <legend>Choose which function you wish compute</legend>
+                
+                <input type="radio" id="add" name="function_selector" value="add">
+                <label for="add">Add</label>
+                
+                <input type="radio" id="multiply" name="function_selector" value="multiply">
+                <label for="multiply">Multiply</label>
+                
+                <input type="radio" id="power" name="function_selector" value="power">
+                <label for="power">Power</label>
+                
+                <input type="radio" id="factorial" name="function_selector" value="factorial">
+                <label for="factorial">Factorial</label>
+                
+                <input type="radio" id="fibonacci" name="function_selector" value="fibonacci">
+                <label for="fibonacci">Fibonacci</label>
+                
+            </fieldset>
+            
+            <input type="number" id="first_number" placeholder="first number" required>
+            
+            <input type="number" id="second_number" placeholder="second number" >
+            
+            <button class="submit_button" type="button">
+                Submit
+            </button>
+            
+        </form>
+        <p id="solution_text">Solution: <span id="solution"></span></p>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>

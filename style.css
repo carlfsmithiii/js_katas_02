@@ -1,0 +1,26 @@
+.body_div {
+    background-color: lightgray;
+    max-width: 800px;
+    margin: auto;
+    border: 1px solid black;
+    text-align: center;
+}
+
+/* form {
+    display: flex;
+    flex-direction: column;
+} */
+
+.function_radio_field {
+    display: inline-block;
+    /* width: auto; */
+    text-align: center;
+}
+
+
+@media screen and (min-width: 600px) {
+    .body_div {
+        width: 90%;
+    }
+}
+
