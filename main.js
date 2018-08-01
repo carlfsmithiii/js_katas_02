@@ -143,7 +143,6 @@ document.querySelectorAll("input").forEach(function(a) {
 
 let submitButton = document.querySelector("button");
 submitButton.onclick = function() {
-    console.log("Submit Button Selected");
     let radio_value = document.querySelector('input[name="function_selector"]:checked').value;
     console.log(radio_value);
     let a = Number(document.getElementById("first_number").value);
