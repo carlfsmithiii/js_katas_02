@@ -1,20 +1,16 @@
 /* NOTE: part of this assignment is to avoid arithmetic operations 
- * after defining "add".  This is untenable if negative numbers are used
- * as input.  I have attempted to stay as close to the assignment as 
+ * after defining "add".  I have attempted to stay as close to the assignment as 
  * possible while accounting for negative numbers
  */
 
 
-let add = function (a, b) {
+const add = function (a, b) {
     return a + b;
 }
 
 /*
  * The instructions are to avoid built-in arithmetic operators or functions
  * and instead use the 'add' function defined above.
- * I have jumped through some hoops to consider the situation where b is negative
- * without simply multiplying by -1, as this would use an arithmetic function.
- * I recognize that I still used % and ++.
  */
 function multiply(a, b) {
     let product = 0;
@@ -27,21 +23,9 @@ function multiply(a, b) {
     for (let i = 0; i < iterationTarget; i++) {
         product = add(product, a);
     }
-    // If b is negative and odd, then the product must be replaced with its additive inverse.
-    // While it is extremely inefficient, I have done so by adding 1 or -1 the necessary number
-    // of times, thus avoiding arithmetic operations (aside from % to check if b is odd)
-    if (b_is_negative && (b % 2)) {
-        let sum = 0;
-        if (product > 0) {
-            for (let i = 0; i < product; i++) {
-                sum = add(sum, -1);
-            }
-        } else {
-            for (let i = 0; i > product; i--) {
-                sum = add(sum, 1);
-            }
-        }
-        product = sum;
+    // If b is negative, then the product must be replaced with its additive inverse.
+    if (b_is_negative) {
+        product = -product;
     }
     return product;
 }
@@ -97,18 +81,21 @@ const fibonacci = function (num) {
 
 
 /* Tests */
+// Tests for add()
 console.log("2 + 5 = " + add(2, 5));
 console.log("2 + -5 = " + add(2, -5));
 console.log("-2 + 5 = " + add(-2, 5));
 console.log("-2 + -5 = " + add(-2, -5));
 console.log("\n");
 
+// Tests for multiply()
 console.log("2 * 5 = " + multiply(2, 5));
 console.log("2 * -5 = " + multiply(2, -5));
 console.log("-2 * 5 = " + multiply(-2, 5));
 console.log("-2 * -5 = " + multiply(-2, -5));
 console.log("\n");
 
+// Tests for power()
 console.log("2 ** 3 = " + power(2, 3));
 console.log("-2 ** 3 = " + power(-2, 3));
 console.log("2 ** -3 = " + power(2, -3));
@@ -116,10 +103,16 @@ console.log("-2 ** -3 = " + power(-2, -3));
 console.log("-3 ** -2 = " + power(-3, -2));
 console.log("\n");
 
+// Tests for factorial()
 console.log("factorial of 5 = " + factorial(5));
 console.log("\n");
 
+// Tests for fibonacci()
 console.log("fibonacci(7) = " + fibonacci(7));
+
+
+
+// Code for GUI interface
 
 document.querySelectorAll("input").forEach(function (a) {
     a.addEventListener("change", function () {
